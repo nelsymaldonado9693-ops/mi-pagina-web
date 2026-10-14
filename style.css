@@ -1,0 +1,302 @@
+/* ==========================================================================
+   RESET Y VARIABLES (DISEÑO PREMIUM)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de colores Modernos (Estética profunda e Industrial) */
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    --card-bg: rgba(255, 255, 255, 0.04); /* Fondo translúcido */
+    --card-border: rgba(255, 255, 255, 0.08);
+    --card-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5), 
+                   inset 0 1px 0px rgba(255, 255, 255, 0.1);
+    
+    --text-primary: #f8fafc; /* Blanco suave */
+    --text-secondary: #94a3b8; /* Gris azulado */
+    --accent-color: #38bdf8; /* Celeste neón */
+    --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    --instagram-gradient: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+    
+    --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Efecto decorativo de fondo */
+body::before {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(0,0,0,0) 70%);
+    top: 15%;
+    left: 20%;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
+    bottom: 20%;
+    right: 15%;
+    z-index: -1;
+}
+
+/* ==========================================================================
+   HEADER Y FOOTER (MINIMALISTAS)
+   ========================================================================== */
+.header {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-badge {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    padding: 0.35rem 0.8rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.header h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer {
+    background-color: rgba(15, 23, 42, 0.9);
+    color: #64748b;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.8rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* ==========================================================================
+   CONTENEDOR Y TARJETA CON FLEXBOX (GLASSMORPHISM)
+   ========================================================================== */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 3rem 1.5rem;
+}
+
+.profile-card {
+    background: rgba(30, 41, 59, 0.4); /* Base oscura semitransparente */
+    backdrop-filter: blur(16px); /* Desenfoque de cristal */
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    max-width: 420px;
+    width: 100%;
+    padding: 3.5rem 2.5rem;
+    border: 1px solid var(--card-border);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.75rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(56, 189, 248, 0.25);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6), 
+                inset 0 1px 0px rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   FOTO DE PERFIL (AVATAR) INTERACTIVO
+   ========================================================================== */
+.avatar-outer-ring {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.5) 0%, rgba(99, 102, 241, 0.2) 100%);
+    padding: 4px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.profile-card:hover .avatar-outer-ring {
+    transform: rotate(5deg) scale(1.03);
+}
+
+.avatar-container {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #0f172a;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #1e293b;
+}
+
+/* ==========================================================================
+   INFORMACIÓN Y TEXTO
+   ========================================================================== */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-info h2 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.35rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.gradient-divider {
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-color), #6366f1);
+    border-radius: 9999px;
+    margin: 1.25rem 0;
+}
+
+.bio {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-weight: 450;
+}
+
+/* ==========================================================================
+   BOTONES E INTERACTIVIDAD (FLEXBOX)
+   ========================================================================== */
+.social-links {
+    display: flex;
+    gap: 0.85rem;
+    width: 100%;
+}
+
+.btn-link {
+    flex: 1;
+    text-decoration: none;
+    padding: 0.85rem 1.25rem;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo Instagram (Borde con degradado y glow) */
+.btn-instagram {
+    background: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-instagram::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--instagram-gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.btn-instagram:hover::before {
+    opacity: 1;
+}
+
+.btn-instagram:hover {
+    border-color: transparent;
+    box-shadow: 0 10px 20px -5px rgba(238, 42, 123, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Estilo Enviar Correo (Acción primaria llamativa) */
+.btn-accent {
+    background: var(--accent-gradient);
+    color: #0f172a; /* Texto oscuro para fuerte contraste */
+    border: none;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+}
+
+.btn-accent:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-text {
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.01em;
+}
+
+/* Efecto de carga suave en CSS */
+.animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
